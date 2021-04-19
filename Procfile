@@ -1,1 +1,1 @@
-web: gunicorn biodata.wsgi --log-file -
+web: gunicorn biodata.wsgi
