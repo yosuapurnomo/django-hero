@@ -7,3 +7,13 @@ from .models import namaModel
 class namaView(ListCreateAPIView,):
     queryset = namaModel.objects.all()
     serializer_class = namaSerial
+
+    def get_success_headers(self, data):
+    	try:
+    		return {
+			'success':data
+			}
+    	except (TypeError, KeyError):
+    		return {
+			'failed':"Create failed"
+			}
