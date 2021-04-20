@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure--ekxu5w&qvflq-d3$%9vl1zvr6jvk&xws$u+(cm1%f_#m=+i#7
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://bio-pj.herokuapp.com/', ]
+ALLOWED_HOSTS = ['https://bio-pj.herokuapp.com/', '*']
 # ALLOWED_HOSTS = []
 
 
@@ -137,17 +137,18 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_ROOT  = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT  = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
-# STATICFILES_DIRS = (
-#     os.path.join(BASE_DIR, 'static'),
-# )
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 CORS_ALLOW_ALL_ORIGINS = True
 
 CORS_ORIGIN_WHITELIST = [
-    'https://localhost:3000'
+    'https://localhost',
+    
 ]
 
 # Default primary key field type
